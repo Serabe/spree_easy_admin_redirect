@@ -1,7 +1,7 @@
 SpreeEasyAdminRedirect
 ======================
 
-Introduction goes here.
+Provides an easy way to redirect an user after login in.
 
 Installation
 ------------
@@ -9,7 +9,7 @@ Installation
 Add spree_easy_admin_redirect to your Gemfile:
 
 ```ruby
-gem 'spree_easy_admin_redirect'
+gem 'spree_easy_admin_redirect', git: 'git@github.com:Serabe/spree_easy_admin_redirect.git', branch: '2-3-stable'
 ```
 
 Bundle your dependencies and run the installation generator:
@@ -18,6 +18,15 @@ Bundle your dependencies and run the installation generator:
 bundle
 bundle exec rails g spree_easy_admin_redirect:install
 ```
+
+The generator does nothing but showing a message. It is provided because it is
+what spree extensions do and somebody might not read this README.
+
+Overriding the redirection
+------
+
+For overriding the redirection path you just need to redefine
+`Spree::Admin::RootController#admin_root_redirect_path`. If you want a more complex behaviour, you might override `Spree::Admin::RootController#index`.
 
 Testing
 -------
